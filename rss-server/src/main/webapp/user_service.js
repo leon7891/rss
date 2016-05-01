@@ -9,14 +9,11 @@ App
 				'UserService',
 				[
 						'$http',
-						'$q', '$cookieStore',
-						function($http, $q, $cookieStore) {
-							var self = this;
+						'$q',
+						function($http, $q) {
 							
-							self.login = $cookieStore.get('login');
-							self.password = $cookieStore.get('password');
-							
-							self.logUserIn = function() {
+							return {
+							logUserIn : function() {
 								return $http
 								.get(
 										'/rss/rest/login')
@@ -31,9 +28,9 @@ App
 											return $q
 													.reject(errResponse);
 										});
-							};
+							},
 							
-							self.register = function(username, password) {
+							createUser : function(username, password) {
 								return $http
 								.post(
 										'/rss/rest/createUser/' + username + "/" + password)
@@ -48,6 +45,6 @@ App
 											return $q
 													.reject(errResponse);
 										});
-							};
+							}}
 							
 						}]);

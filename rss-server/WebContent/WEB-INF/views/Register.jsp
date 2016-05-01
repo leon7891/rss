@@ -14,7 +14,7 @@
 
 		<div class="col-md-6 col-md-offset-3">
 			<h2>Register</h2>
-			<form name="form" ng-submit="ctrl.register()" role="form">
+			<form name="form" ng-submit="ctrl.createUser()" role="form">
 				<div class="form-group"
 					ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
 					<label for="username">Username</label> <input type="text"

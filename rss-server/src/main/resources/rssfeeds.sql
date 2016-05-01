@@ -29,6 +29,9 @@ CREATE TABLE `users` ( `ID` int(11) NOT NULL AUTO_INCREMENT, `NAME` varchar(50) 
 
 INSERT INTO `feeds` (URL, TITLE, IMAGE) VALUES ('http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml', 'NYT > Home Page', 'https://static01.nyt.com/images/misc/NYT_logo_rss_250x40.png');
 INSERT INTO `feeds` (URL, TITLE, IMAGE) VALUES ('http://feeds.bbci.co.uk/news/rss.xml', 'BBC News - Home', 'http://news.bbcimg.co.uk/nol/shared/img/bbc_news_120x60.gif');
+INSERT INTO `feeds` (URL, TITLE, IMAGE) VALUES ('http://www.france24.com/en/top-stories/rss', 'Top stories – France 24 - International News 24/7', 'http://www.france24.com/bundles/aefhermesf24/img/france24-logo.png?version=20160421174955');
+INSERT INTO `feeds` (URL, TITLE, IMAGE) VALUES ('http://www.huffingtonpost.com/feeds/index.xml', 'The Huffington Post | The Full Feed', NULL);
+INSERT INTO `feeds` (URL, TITLE, IMAGE) VALUES ('http://www.digitaltrends.com/feed/', '>Digital Trends', 'http://cdn2.digitaltrends.com/touch-icon-iphone4.png?ver=2');
 
 INSERT INTO `users` (NAME, PASSWORD) VALUES ('admin', '123456');
 INSERT INTO `users` (NAME, PASSWORD) VALUES ('user', 'test');
