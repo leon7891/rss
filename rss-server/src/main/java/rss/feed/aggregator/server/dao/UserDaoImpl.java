@@ -1,5 +1,7 @@
 package rss.feed.aggregator.server.dao;
 
+import java.util.List;
+
 import org.hibernate.criterion.Restrictions;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,13 +16,30 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
 		super(User.class);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see rss.feed.aggregator.server.dao.IUserDao#getByLogin(java.lang.String)
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
-	public User getByLogin(String login)  {
-		return (User) getSession().createCriteria(User.class)
-				.add(Restrictions.eq("name", login)).list().get(0);
+	public User getByLogin(String login) {
+		List<User> users = getSession().createCriteria(User.class).add(Restrictions.eq("name", login)).list();
+		if (users == null || users.size() == 0) {
+			return null;
+		}
+		return users.get(0);
 	}
-	
+
+	@Override
+	public void createUser(User user) {
+		// this is to preven a hibernate bug
+
+		getSession()
+				.createSQLQuery(
+						"INSERT INTO users (NAME, PASSWORD) VALUES (:name, :password)")
+				.setParameter("name", user.getName()).setParameter("password", user.getPassword())
+				.executeUpdate();
+	}
+
 }

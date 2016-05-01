@@ -34,7 +34,7 @@
 				<div class="form-actions">
 					<button type="submit" ng-disabled="form.$invalid || vm.dataLoading"
 						class="btn btn-primary">Register</button>
-					<a href="#/" class="btn btn-link">Cancel</a>
+					<a href="rss" class="btn btn-link">Cancel</a>
 				</div>
 			</form>
 		</div>
@@ -47,4 +47,5 @@
 <script src="<c:url value='/feed_service.js' />"></script>
 <script src="<c:url value='/user_service.js' />"></script>
 <script src="<c:url value='/feed_controller.js' />"></script>
+<script src="<c:url value='/user_controller.js' />"></script>
 </html>

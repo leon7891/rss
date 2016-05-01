@@ -9,8 +9,8 @@ App
 				'FeedService',
 				[
 						'$http',
-						'$q', 'UserService',
-						function($http, $q, UserService) {
+						'$q',
+						function($http, $q) {
 							
 							$http.defaults.headers.common['login'] = 'user';
 							$http.defaults.headers.common['password'] = 'test';

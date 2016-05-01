@@ -11,11 +11,8 @@ App.controller('UserController', [ '$scope', 'UserService',
 			
 			self.createUser = function() {
 				console.debug("createUser");
-				UserService.createUser(self.user.login, self.user.password).then(function(d) {
-					self.feeds = d;
-				}, function(errResponse) {
-				});
+				UserService.createUser(self.user.login, self.user.password);
+				$location.path("/rss/");
 			};
 			
-			self.getNewFeeds();
 		} ]);

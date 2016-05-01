@@ -9,12 +9,12 @@ App
 				'UserService',
 				[
 						'$http',
-						'$q', '$cookies',
-						function($http, $q, $cookies) {
+						'$q', '$cookieStore',
+						function($http, $q, $cookieStore) {
 							var self = this;
 							
-							self.login = $cookies.get('login');
-							self.password = $cookies.get('password');
+							self.login = $cookieStore.get('login');
+							self.password = $cookieStore.get('password');
 							
 							self.logUserIn = function() {
 								return $http

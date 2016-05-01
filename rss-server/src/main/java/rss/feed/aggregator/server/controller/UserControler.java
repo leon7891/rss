@@ -31,7 +31,10 @@ public class UserControler {
 	
 	@RequestMapping(value = "/rest/createUser/{login}/{password}", method = RequestMethod.POST)
 	public ResponseEntity<?> createUser(@PathVariable("login") String login, @PathVariable("password") String password) {
-		userService.createUser(login, password);
-		return new ResponseEntity<Object>(HttpStatus.OK);
+		if (userService.createUser(login, password)) {
+			return new ResponseEntity<Object>(HttpStatus.OK);
+		}
+		return new ResponseEntity<Object>(HttpStatus.UNAUTHORIZED);
+			
 	}
 }
