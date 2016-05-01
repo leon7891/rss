@@ -1,10 +1,10 @@
 FROM tomcat:8.5
 
-RUN apt-get update && apt-get -y install git openjdk-8-jdk maven mysql-client
-CACHE OFF
+RUN apt-get update && apt-get -y install git openjdk-8-jdk maven mysql-client; exit 0
+
 RUN git clone https://github.com/leon7891/rss.git
 
 RUN mvn -f rss/rss-server/pom.xml package
 RUN cp rss/rss-server/target/RSSFeedAggregatorServer.war /usr/local/tomcat/webapps/rss.war
-CACHE ON
+
 CMD ["catalina.sh", "run"]
