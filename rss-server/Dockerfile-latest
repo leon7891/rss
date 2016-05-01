@@ -1,8 +1,6 @@
 FROM tomcat:8.5
 
-RUN apt-get update && apt-get -y install mysql-client; exit 0
-
-RUN echo "stop cache ..." && wget https://github.com/leon7891/rss/releases/download/0.0.1/RSSFeedAggregatorServer.war
+RUN wget https://github.com/leon7891/rss/releases/download/0.0.1/RSSFeedAggregatorServer.war
 RUN cp RSSFeedAggregatorServer.war /usr/local/tomcat/webapps/rss.war
 
 CMD ["catalina.sh", "run"]
