@@ -17,10 +17,5 @@ App.controller('FeedController', [ '$scope', 'FeedService',
 				});
 			};
 			
-			self.go = function(path) {
-				console.debug("go to: " + path);
-				$location.path(path);
-			};
-			
 			self.getNewFeeds();
 		} ]);

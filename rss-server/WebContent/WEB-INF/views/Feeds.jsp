@@ -11,6 +11,7 @@
 </head>
 <body ng-app="myApp" class="ng-cloak">
 	<div class="generic-container" ng-controller="FeedController as ctrl">
+
 		<div class="panel panel-default">
 			<!-- Default panel contents -->
 			<div class="panel-heading">
@@ -21,7 +22,7 @@
 					<thead>
 						<tr>
 							<th>Title</th>
-							<th>URL</th>;
+							<th>URL</th>
 							<th width="20%"></th>
 						</tr>
 					</thead>
@@ -40,5 +41,6 @@
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
 <script src="<c:url value='/app.js' />"></script>
 <script src="<c:url value='/feed_service.js' />"></script>
+<script src="<c:url value='/user_service.js' />"></script>
 <script src="<c:url value='/feed_controller.js' />"></script>
 </html>

@@ -9,10 +9,11 @@ App
 				'FeedService',
 				[
 						'$http',
-						'$q',
-						function($http, $q) {
-							$http.defaults.headers.common['login'] = 'user';
-							$http.defaults.headers.common['password'] = 'test';
+						'$q', 'UserService',
+						function($http, $q, ) {
+							
+							$http.defaults.headers.common['login'] = UserService.login;
+							$http.defaults.headers.common['password'] = UserService.password;
 
 							return {
 								getNewFeeds : function() {
