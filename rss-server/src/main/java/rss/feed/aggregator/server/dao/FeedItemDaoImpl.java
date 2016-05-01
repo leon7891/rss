@@ -51,8 +51,8 @@ public class FeedItemDaoImpl extends AbstractDao<Integer, FeedItem> implements F
 				.size() <= 0) {
 			getSession()
 					.createSQLQuery(
-							"INSERT INTO feed_items (TITLE, URL, PUB_DATE, FEED_ID, IMAGE) VALUES (:title, :url, :pubDate, :feed, :image)")
-					.setParameter("title", entity.getTitle()).setParameter("url", entity.getUrl()).setParameter("image", entity.getImage())
+							"INSERT INTO feed_items (TITLE, URL, PUB_DATE, FEED_ID) VALUES (:title, :url, :pubDate, :feed)")
+					.setParameter("title", entity.getTitle()).setParameter("url", entity.getUrl())
 					.setParameter("pubDate", entity.getPubDate()).setParameter("feed", entity.getFeed().getId())
 					.executeUpdate();
 		}

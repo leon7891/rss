@@ -13,7 +13,7 @@ CREATE TABLE `feeds` (`ID` int(11) NOT NULL AUTO_INCREMENT, `URL` varchar(200) N
 -- Table structure for feed_items
 -- ----------------------------
 DROP TABLE IF EXISTS `feed_items`;
-CREATE TABLE `feed_items` (`ID` int(11) NOT NULL AUTO_INCREMENT, `TITLE` varchar(50) NOT NULL, `URL` varchar(200) DEFAULT NULL, `PUB_DATE` datetime DEFAULT NULL, `FEED_ID` int(11) NOT NULL, `IMAGE` varchar(200) DEFAULT NULL, PRIMARY KEY (`ID`)) DEFAULT CHARSET=utf8;
+CREATE TABLE `feed_items` (`ID` int(11) NOT NULL AUTO_INCREMENT, `TITLE` varchar(50) NOT NULL, `URL` varchar(200) DEFAULT NULL, `PUB_DATE` datetime DEFAULT NULL, `FEED_ID` int(11) NOT NULL, PRIMARY KEY (`ID`)) DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for subscriptions

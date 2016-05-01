@@ -35,9 +35,6 @@ public class FeedItem implements Entity<Integer> {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date pubDate;
 	
-	@Column(name="IMAGE")
-	private String image;
-	
 	@ManyToOne
 	@JoinColumn(name="FEED_ID")
 	private Feed feed;
@@ -100,12 +97,9 @@ public class FeedItem implements Entity<Integer> {
 	}
 
 	public String getImage() {
-		return image;
+		return feed.getImage();
 	}
 
-	public void setImage(String image) {
-		this.image = image;
-	}
 	
 	public int getFeedId() {
 		return this.getFeed().getId();

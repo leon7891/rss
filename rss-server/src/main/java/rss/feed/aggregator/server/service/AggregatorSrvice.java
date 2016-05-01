@@ -51,7 +51,6 @@ public class AggregatorSrvice {
 						item.setTitle(entity.getTitle());
 						item.setUrl(entity.getLink());
 						item.setPubDate(entity.getPublishedDate());
-						item.setImage(entity.getUri());
 						item.setFeed(feed);
 						if (item.getPubDate() == null) {
 							item.setPubDate(new Date());
