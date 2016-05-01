@@ -22,6 +22,24 @@ App
 										'/rss/rest/login')
 								.then(
 										function(response) {
+											
+											return response.data;
+										},
+										function(errResponse) {
+											console
+													.error('Error while getting news');
+											return $q
+													.reject(errResponse);
+										});
+							};
+							
+							self.register = function(username, password) {
+								return $http
+								.post(
+										'/rss/rest/createUser/' + username + "/" + password)
+								.then(
+										function(response) {
+											
 											return response.data;
 										},
 										function(errResponse) {

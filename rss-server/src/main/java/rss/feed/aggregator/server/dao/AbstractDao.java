@@ -40,7 +40,7 @@ public abstract class AbstractDao<K extends Serializable, E extends Entity<K>> i
 				@Override
 				public void execute(Connection connection) throws SQLException {
 					DatabaseMetaData dbm = connection.getMetaData();
-					ResultSet tables = dbm.getTables(null, null, "USERS", null);
+					ResultSet tables = dbm.getTables(null, null, "users", null);
 					if (tables.next()) {
 						isDbInitialized = true;
 					}
@@ -61,11 +61,12 @@ public abstract class AbstractDao<K extends Serializable, E extends Entity<K>> i
 					}
 					if (!sql.equals("")) {
 						session.createSQLQuery(sql).executeUpdate();
+						Thread.sleep(100);
 					}
 				}
 				is.close();
 
-			} catch (IOException e1) {
+			} catch (IOException | InterruptedException e1) {
 				T.warn("couldn't creat db.");
 			}
 			isDbInitialized = true;

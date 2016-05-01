@@ -33,6 +33,7 @@
 				</table>
 			</div>
 		</div>
+		<a href="#/Register" class="btn btn-link">Register</a>
 	</div>
 </body>
 

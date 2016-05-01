@@ -31,4 +31,15 @@ public class UserService {
 	public void updateUser(User user) {
 		userDao.save(user);
 	}
+
+	public void createUser(String login, String password) {
+		if (userDao.getByLogin(login) == null) {
+			User user = new User();
+			
+			user.setName(login);
+			user.setPassword(password);
+			userDao.save(user);
+		}
+		
+	}
 }

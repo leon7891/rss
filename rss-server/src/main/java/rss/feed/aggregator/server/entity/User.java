@@ -20,7 +20,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @javax.persistence.Entity
-@Table(name="USERS")
+@Table(name="users")
 public class User implements Entity<Integer> {
 
 	private static final long serialVersionUID = -2794331168781981898L;
@@ -43,7 +43,7 @@ public class User implements Entity<Integer> {
 	@ManyToMany
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@JoinTable(
-		      name="SUBSCRIPTIONS",
+		      name="subscriptions",
 		      joinColumns=@JoinColumn(name="USER_ID", referencedColumnName="ID"),
 		      inverseJoinColumns=@JoinColumn(name="FEED_ID", referencedColumnName="ID"))
 	private List<Feed> feeds;

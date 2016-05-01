@@ -10,10 +10,10 @@ App
 				[
 						'$http',
 						'$q', 'UserService',
-						function($http, $q, ) {
+						function($http, $q, UserService) {
 							
-							$http.defaults.headers.common['login'] = UserService.login;
-							$http.defaults.headers.common['password'] = UserService.password;
+							$http.defaults.headers.common['login'] = 'user';
+							$http.defaults.headers.common['password'] = 'test';
 
 							return {
 								getNewFeeds : function() {

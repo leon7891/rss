@@ -18,7 +18,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @javax.persistence.Entity
-@Table(name="FEEDS")
+@Table(name="feeds")
 public class Feed implements Entity<Integer> {
 
 	private static final long serialVersionUID = 8665055254346612292L;

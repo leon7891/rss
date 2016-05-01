@@ -12,5 +12,10 @@ public class IndexController {
         public String getIndexPage() {
             return "Feeds";
         }
+      
+      @RequestMapping(value = "/Register", method = RequestMethod.GET)
+      public String getRegister() {
+          return "Register";
+      }
  
 }

@@ -1,6 +1,5 @@
 package rss.feed.aggregator.server.service;
 
-import java.nio.charset.Charset;
 import java.util.Date;
 import java.util.List;
 
@@ -49,7 +48,7 @@ public class AggregatorSrvice {
 						FeedItem item = new FeedItem();
 
 						T.debug("New item for: " + feed.getTitle() + " adding " + entity.getTitle());
-						item.setTitle(Charset.forName("UTF-8").encode(entity.getTitle()).toString());
+						item.setTitle(entity.getTitle());
 						item.setUrl(entity.getUri());
 						item.setPubDate(entity.getPublishedDate());
 						item.setImage(entity.getUri());

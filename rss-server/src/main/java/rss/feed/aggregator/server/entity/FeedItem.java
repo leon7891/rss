@@ -15,7 +15,7 @@ import javax.persistence.TemporalType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @javax.persistence.Entity
-@Table(name="FEED_ITEMS")
+@Table(name="feed_items")
 public class FeedItem implements Entity<Integer> {
 
 	private static final long serialVersionUID = 6463847984029996675L;
