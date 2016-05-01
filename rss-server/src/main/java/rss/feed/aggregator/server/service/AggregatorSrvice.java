@@ -49,7 +49,7 @@ public class AggregatorSrvice {
 
 						T.debug("New item for: " + feed.getTitle() + " adding " + entity.getTitle());
 						item.setTitle(entity.getTitle());
-						item.setUrl(entity.getUri());
+						item.setUrl(entity.getLink());
 						item.setPubDate(entity.getPublishedDate());
 						item.setImage(entity.getUri());
 						item.setFeed(feed);
